@@ -1,3 +1,28 @@
 /* Eli Wynn */
 /* Version 1.0 */
 /* Global Styles */
+
+/* css/styles.css */
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background-color: black;
+    color: limegreen;
+  }
+  nav {
+    background: #111;
+    padding: 1rem;
+    text-align: center;
+  }
+  nav a {
+    color: limegreen;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  main {
+    padding: 2rem;
+  }
+  .project {
+    margin-bottom: 2rem;
+  }
