@@ -3,26 +3,62 @@
 /* Global Styles */
 
 /* css/styles.css */
-body {
+html, body {
     margin: 0;
-    font-family: 'Courier New', monospace;
-    background-color: black;
-    color: limegreen;
+    padding: 0;
+    height: 100%;
+    font-family: monospace;
+    overflow: hidden;
+    background: black;
   }
-  nav {
-    background: #111;
-    padding: 1rem;
-    text-align: center;
+  
+  /* ASCII background container */
+  #ascii-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
   }
-  nav a {
-    color: limegreen;
-    margin: 0 15px;
+  
+  /* The actual ASCII content */
+  #solar-system {
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 14px;
+    line-height: 14px;
+    white-space: pre;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Overlay Navigation */
+  #top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    background: rgba(0, 0, 0);
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  #top-nav a {
+    color: #00ffcc;
     text-decoration: none;
     font-weight: bold;
   }
-  main {
-    padding: 2rem;
+  
+  #top-nav a:hover {
+    text-decoration: underline;
   }
-  .project {
-    margin-bottom: 2rem;
-  }
+  
