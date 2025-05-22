@@ -1,31 +1,46 @@
-<!-- Eli Wynn -->
-<!-- Version 1.0 -->
-<!-- Main Page --> 
-
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eli Wynn | Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eli Wynn | Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <!-- Galaxy ASCII Background -->
-    <div id="ascii-background">
-      <pre id="solar-system"></pre>
+    <div id="particles-background"></div>
+    
+    <div class="content-wrapper">
+        <nav id="top-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        
+        <section id="home" class="hero-section">
+            <h1>Eli Wynn</h1>
+            <p>DevOps & Software Development</p>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p><strong>Education:</strong> Honours BSc in Computer Science, University of Ottawa</p>
+                <p><strong>Skills:</strong> Java, Python, C++, Golang, JavaScript, HTML/CSS, Bash, Git, Agile, Linux/Windows</p>
+                <p><strong>Experience:</strong> Software Developer Intern at MavericksVFX</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contact Me</h2>
+            <div class="contact-content">
+                <p>Email: eli.wynn7@gmail.com</p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/eliwynn" target="_blank">linkedin.com/in/eliwynn</a></p>
+            </div>
+        </section>
     </div>
-  
-    <!-- Overlayed Navigation -->
-    <nav id="top-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-    </nav>
-  
-    <script src="Javascript/solarSystem.js"></script>
-  </body>
-  
-  
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="Javascript/main.js"></script>
+</body>
 </html>
