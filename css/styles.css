@@ -58,14 +58,14 @@ body {
     opacity: 0.8;
 }
 
-@keyframes glow {
+/* @keyframes glow {
     from {
         text-shadow: 0 0 2px #00ffcc, 0 0 4px #00ffcc; 
     }
     to {
         text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc;  
     }
-}
+} */
 
 #particles-background {
     position: fixed;
@@ -136,5 +136,119 @@ html {
     scroll-behavior: smooth;
     scroll-snap-type: y proximity;  /* Changed from mandatory to proximity for smoother scrolling */
     height: 100%;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.projects-container h1 {
+    color: #00ffcc;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.project {
+    background: rgba(40, 40, 40, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 255, 204, 0.5);
+}
+
+.project h2 {
+    color: #00ffcc;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.project p {
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-links a {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.github-link {
+    background: #00ffcc;
+    color: #000;
+}
+
+.demo-link {
+    background: transparent;
+    color: #00ffcc;
+    border: 1px solid #00ffcc;
+}
+
+.github-link:hover {
+    background: #00ccaa;
+}
+
+.demo-link:hover {
+    background: rgba(0, 255, 204, 0.1);
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-stack span {
+    background: rgba(0, 255, 204, 0.1);
+    color: #00ffcc;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+#ascii-background {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow: hidden;
+    height: 300px;
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        margin: 60px auto;
+    }
+
+    .project {
+        padding: 1.5rem;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-links a {
+        text-align: center;
+    }
 }
   
