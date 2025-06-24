@@ -1,64 +1,254 @@
-/* Eli Wynn */
-/* Version 1.0 */
-/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    overflow-x: hidden;  /* Only hide horizontal overflow */
+    overflow-y: auto;    /* Enable vertical scrolling */
+}
 
-/* css/styles.css */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: monospace;
-    overflow: hidden;
-    background: black;
-  }
-  
-  /* ASCII background container */
-  #ascii-background {
+#top-nav {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    overflow: hidden;
-  }
-  
-  /* The actual ASCII content */
-  #solar-system {
-    width: 100%;
-    height: 100%;
-    color: white;
-    font-size: 14px;
-    line-height: 14px;
-    white-space: pre;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Overlay Navigation */
-  #top-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    background: rgba(0, 0, 0);
-    padding: 0.75rem 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-  
-  #top-nav a {
+    top: 20px;  /* Added margin from top */
+    left: 50%;
+    transform: translateX(-50%);  /* Center the nav bar */
+    padding: 12px 30px;
+    text-align: center;
+    z-index: 100;
+    background: rgba(40, 40, 40, 0.7);  /* Subtle gray background */
+    border-radius: 25px;  /* Rounded edges */
+    backdrop-filter: blur(5px);  /* Optional: adds a slight blur effect */
+}
+
+#top-nav a {
     color: #00ffcc;
     text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+#top-nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #00ffcc;
+}
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    color: #00ffcc;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);  /* Reduced glow intensity */
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+/* @keyframes glow {
+    from {
+        text-shadow: 0 0 2px #00ffcc, 0 0 4px #00ffcc; 
+    }
+    to {
+        text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc;  
+    }
+} */
+
+#particles-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    overflow-y: auto;    /* Enable scrolling in the wrapper */
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    scroll-snap-align: start;
+    position: relative;  /* Ensure proper stacking */
+}
+
+.about-section, .contact-section {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.about-section h2, .contact-section h2 {
+    color: #00ffcc;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.about-content, .contact-content {
+    max-width: 800px;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(40, 40, 40, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.about-content p, .contact-content p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.contact-content a {
+    color: #00ffcc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-content a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #00ffcc;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;  /* Changed from mandatory to proximity for smoother scrolling */
+    height: 100%;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.projects-container h1 {
+    color: #00ffcc;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.project {
+    background: rgba(40, 40, 40, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 255, 204, 0.5);
+}
+
+.project h2 {
+    color: #00ffcc;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.project p {
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-links a {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
     font-weight: bold;
-  }
-  
-  #top-nav a:hover {
-    text-decoration: underline;
-  }
+    transition: all 0.3s ease;
+}
+
+.github-link {
+    background: #00ffcc;
+    color: #000;
+}
+
+.demo-link {
+    background: transparent;
+    color: #00ffcc;
+    border: 1px solid #00ffcc;
+}
+
+.github-link:hover {
+    background: #00ccaa;
+}
+
+.demo-link:hover {
+    background: rgba(0, 255, 204, 0.1);
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-stack span {
+    background: rgba(0, 255, 204, 0.1);
+    color: #00ffcc;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+#ascii-background {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow: hidden;
+    height: 300px;
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        margin: 60px auto;
+    }
+
+    .project {
+        padding: 1.5rem;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-links a {
+        text-align: center;
+    }
+}
   
