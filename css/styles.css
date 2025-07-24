@@ -473,6 +473,7 @@ html {
     
     .project-items {
         grid-template-columns: 1fr;
+
     }
 }
   
